@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-                git url: 'https://github.com/Gygamyt/Selenium_IT_Academy'
+                git url: 'https://github.com/Gygamyt/Selenide_IT_Academy'
             }
         }
         stage('Tests') {
