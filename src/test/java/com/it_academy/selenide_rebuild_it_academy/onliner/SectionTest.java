@@ -31,7 +31,7 @@ public class SectionTest extends OnlinerBaseTest {
     public void sectionCheckTest() {
         logger().info("sectionCheckTest started");
         header
-                .clickOnMainNavigationLink("Катаsadasdлог");
+                .clickOnMainNavigationLink("Каталог");
 
         ElementsCollection sectionsWebElements = new CatalogPage().getSectionsElements();
 
