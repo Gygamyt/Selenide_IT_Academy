@@ -20,6 +20,7 @@ public class CatalogNavigationTest extends OnlinerBaseTest {
 
     @Test
     public void componentListTest() {
+        logger().info("componentListTest started");
         header
                 .clickOnMainNavigationLink("Каталог")
                 .clickOnCatalogClassifierLink("Компьютеры")
@@ -32,5 +33,6 @@ public class CatalogNavigationTest extends OnlinerBaseTest {
         currentComponents.forEach(components -> assertThat(components.matches(REGULAR_EXPRESSION_FOR_COMPONENTS_CHECK))
                 .as("Element fails validation")
                 .isTrue());
+        logger().info("componentListTest ended");
     }
 }

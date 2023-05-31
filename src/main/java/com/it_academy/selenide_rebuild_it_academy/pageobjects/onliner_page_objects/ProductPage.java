@@ -28,6 +28,7 @@ public class ProductPage extends BasePage {
 
     public ProductPage clickOnBuyButton() {
         BUY_BUTTON.click();
+        logger().info("buy button is clicked");
         return this;
     }
     public String getProductTittleText() {

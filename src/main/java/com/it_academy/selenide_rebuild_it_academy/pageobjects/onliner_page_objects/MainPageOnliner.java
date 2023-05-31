@@ -16,6 +16,7 @@ public class MainPageOnliner extends BasePage {
 
     public MainPageOnliner search(String request) {
         $(SEARCH_FIELD).sendKeys(request);
+        logger().info("sent request: '{}' to search field", request);
         return this;
     }
 
@@ -28,6 +29,7 @@ public class MainPageOnliner extends BasePage {
     }
     public ProductPage clickOnProductLink() {
         $(PRODUCT_NAME_XPATH).click();
+        logger().info("clicked on product link");
         return new ProductPage();
     }
 
@@ -37,6 +39,7 @@ public class MainPageOnliner extends BasePage {
 
     public MainPageOnliner switchToiFrame() {
         switchTo().frame($(By.xpath(IFRAME_XPATH)));
+        logger().info("switched to iFrame");
         return this;
     }
 }

@@ -26,7 +26,7 @@ public class ProductsPage extends BasePage {
     public List<WebElement> getFieldsForVisibilityCheck() {
         List<WebElement> util = new ArrayList<>();
         for (String fieldsClass : fieldsClasses) {
-            util.addAll($$(By.xpath((format(FIELDS_PATTERN, fieldsClass)))));
+            util.addAll($$(By.xpath((format(FIELDS_PATTERN, fieldsClass))))); //со стримами становится абсолютно нечитаемо (даже хуже, чем сейчас)
         }
         return util;
     }
