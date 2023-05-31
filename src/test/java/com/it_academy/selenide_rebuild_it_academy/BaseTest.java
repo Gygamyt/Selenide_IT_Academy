@@ -17,13 +17,13 @@ public class BaseTest implements CustomLogger {
         staticLogger.info("start of driver initialization");
         Driver.initDriver();
         staticLogger.info("driver initialized");
-//        setupAllureReports(); //screenshots are not appeared when assertions fail, so watcher fixes it
+        setupAllureReports(); //screenshots are not appeared when assertions fail, so watcher fixes it
     }
 
 
     static void setupAllureReports() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true)
+                .screenshots(false)
                 .savePageSource(true)
         );
     }
