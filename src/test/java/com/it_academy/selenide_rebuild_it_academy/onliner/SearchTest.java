@@ -19,14 +19,15 @@ public class SearchTest extends OnlinerBaseTest {
     private final ProductPage productPage = new ProductPage();
 
     @Test
-    public void isSearchResultsExist() {
+    public void isSearchResultsExistTest() {
         mainPageOnliner
                 .search(SEARCH_REQUEST);
         assertThat(mainPageOnliner.iFrameCheck()).isTrue();
     }
 
     @Test
-    public void checkRequestedResults() {
+    public void checkRequestedResultsTest() {
+        logger().info("checkRequestedResultsTest started");
         mainPageOnliner
                 .search(SEARCH_REQUEST);
 
@@ -35,10 +36,12 @@ public class SearchTest extends OnlinerBaseTest {
 
         utilElementsCollection.forEach(selenideElement -> assertThat(selenideElement.getText()
                 .contains(SEARCH_REQUEST)).isTrue());
+        logger().info("checkRequestedResultsTest ended");
     }
 
     @Test
-    public void checkOffers() {
+    public void checkOffersTest() {
+        logger().info("checkOffersTest started");
         List<String> resultsForCheck = new ArrayList<>() {{
             add("Описание и фото");
             add("Предложения продавцов");
@@ -60,5 +63,6 @@ public class SearchTest extends OnlinerBaseTest {
                 stringsFromElements.add(selenideElement.getText()));
 
         assertThat(stringsFromElements).containsAll(resultsForCheck);
+        logger().info("checkOffersTest ended");
     }
 }

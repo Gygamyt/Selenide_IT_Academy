@@ -18,11 +18,13 @@ public class SectionsTest extends OnlinerBaseTest {
 
     @Test
     public void sectionComputersTest() {
+        logger().info("sectionComputersTest started");
         header
                 .clickOnMainNavigationLink("Каталог")
                 .clickOnCatalogClassifierLink("Компьютеры");
         requiredSections.forEach(section -> AssertionsForClassTypes.assertThat(catalogPage.isCatalogNavigationListDisplayed(section))
                 .as("Trouble msg.")
                 .isTrue());
+        logger().info("sectionComputersTest ended");
     }
 }

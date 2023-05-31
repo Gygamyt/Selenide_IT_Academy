@@ -13,11 +13,13 @@ public class ProductsListsTest extends OnlinerBaseTest {
 
     @Test
     public void headphonesListTest() {
+        logger().info("headphonesListTest started");
         header
                 .clickOnMainNavigationLink("Каталог")
                 .clickOnCatalogClassifierLink("Электроника")
                 .clickOnCatalogClassifierCategoryLink("Аудиотехника")
                 .clickOnProductLink("Наушники");
         productsPage.getFieldsForVisibilityCheck().forEach(webElement -> assertThat(webElement.isEnabled()).isTrue());
+        logger().info("headphonesListTest ended");
     }
 }

@@ -7,14 +7,16 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
-public class BaseTest {
+public class BaseTest implements CustomLogger {
 
     @RegisterExtension
     MyWatcher myWatcher = new MyWatcher();
 
     @BeforeAll
     public static void initDriver() {
+        staticLogger.info("start of driver initialization");
         Driver.initDriver();
+        staticLogger.info("driver initialized");
 //        setupAllureReports(); //screenshots are not appeared when assertions fail, so watcher fixes it
     }
 

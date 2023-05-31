@@ -29,6 +29,7 @@ public class SectionTest extends OnlinerBaseTest {
 
     @Test
     public void sectionCheckTest() {
+        logger().info("sectionCheckTest started");
         header
                 .clickOnMainNavigationLink("Каталог");
 
@@ -39,5 +40,6 @@ public class SectionTest extends OnlinerBaseTest {
         assertThat(currentSections)
                 .as("Current sections does match the required sections.")
                 .containsAll(requiredSections);
+        logger().info("sectionCheckTest ended");
     }
 }

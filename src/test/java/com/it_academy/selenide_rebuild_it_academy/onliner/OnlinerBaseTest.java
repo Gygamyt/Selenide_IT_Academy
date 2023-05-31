@@ -13,5 +13,6 @@ public class OnlinerBaseTest extends BaseTest {
     @BeforeEach
     public void openOnliner() {
         open(LinksForTestsEnum.ONLINER.getLink());
+        logger().info("site is opened");
     }
 }

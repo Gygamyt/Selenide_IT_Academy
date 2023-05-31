@@ -15,6 +15,7 @@ public class Header extends BasePage {
 
     public CatalogPage clickOnMainNavigationLink(String link) {
         $(By.xpath(format(MAIN_NAVIGATION_LINK_XPATH_PATTERN, link))).click();
+        logger().info("clicked {}", link);
         return new CatalogPage();
     }
 }

@@ -2,6 +2,7 @@ package com.it_academy.selenide_rebuild_it_academy.pageobjects.onliner_page_obje
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
+import com.it_academy.selenide_rebuild_it_academy.CustomLogger;
 import com.it_academy.selenide_rebuild_it_academy.pageobjects.BasePage;
 import org.openqa.selenium.By;
 
@@ -37,11 +38,13 @@ public class CatalogPage extends BasePage {
 
     public CatalogPage clickOnCatalogClassifierLink(String link) {
         $(By.xpath(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link))).click();
+        logger().info("clicked '{}'", link);
         return this;
     }
 
     public CatalogPage clickOnCatalogClassifierCategoryLink(String link) {
         $(By.xpath(format(CATALOG_CLASSIFIER__CATEGORY_LINK_XPATH_PATTERN, link))).click();
+        logger().info("clicked '{}'", link);
         return this;
     }
 
@@ -51,6 +54,7 @@ public class CatalogPage extends BasePage {
 
     public ProductsPage clickOnProductLink(String product) {
         $(By.xpath(format(PRODUCT_XPATH_PATTERN, product))).click();
+        logger().info("clicked '{}'", product);
         return new ProductsPage();
     }
 }
